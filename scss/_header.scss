@@ -1,0 +1,15 @@
+// Header Settings
+
+header {
+  background-color: $bgHeader;
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  img {
+    height: 60px;
+    margin: 10px 250px;
+  }
+}
