@@ -1,0 +1,40 @@
+<!-- Per la seconda milestone, index.html dovrà eseguire una chiamata ajax (meglio se con vuejs) verso app/server.php -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>php-ajax-dischi</title>
+  </head>
+  <body>
+
+    <div id="root">
+
+      <header>
+        <img src="img/logo.png" alt="logo">
+      </header>
+
+      <main>
+        <div class="container">
+          <ul>
+            <li v-for="element in disks">
+              <img :src="element.poster" alt="">
+              <h2>{{element.title}}</h2>
+              <h4>{{element.author}}</h4>
+              <h4>{{element.year}}</h4>
+              <h4>{{element.genre}}</h4>
+            </li>
+          </ul>
+        </div>
+      </main>
+
+    </div>
+
+    <!-- Script -->
+    <script src="js/script.js" charset="utf-8"></script>
+  </body>
+</html>
