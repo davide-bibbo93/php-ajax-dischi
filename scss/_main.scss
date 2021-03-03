@@ -1,12 +1,36 @@
 // Main Settings
 
 main {
-  background-color: $bgMain;
+  background-color: $bgBody;
   margin-top: 80px;
 
   .container {
     width: 1170px;
     margin: auto;
+
+    .select{
+      display: flex;
+      width: 165px;
+      padding: $paddingBottom;
+      background-color: $bgSelect;
+      border-radius: 12px;
+
+      h4{
+        font-size: 14px;
+        color: $subTitle;
+      }
+
+      select {
+        width: 18px;
+        text-align: center;
+        margin-left: 8px;
+        background-color: $bgSelect;
+        color: $white;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+      }
+    }
 
     ul {
       display: flex;

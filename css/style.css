@@ -9,6 +9,10 @@ body {
   background-color: #132431;
 }
 
+#root {
+  height: 100vh;
+}
+
 header {
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
@@ -23,12 +27,33 @@ header img {
 }
 
 main {
-  background-color: #182d3d;
+  background-color: #132431;
   margin-top: 80px;
 }
 main .container {
   width: 1170px;
   margin: auto;
+}
+main .container .select {
+  display: flex;
+  width: 165px;
+  padding: 10px;
+  background-color: #182d3d;
+  border-radius: 12px;
+}
+main .container .select h4 {
+  font-size: 14px;
+  color: lightgrey;
+}
+main .container .select select {
+  width: 18px;
+  text-align: center;
+  margin-left: 8px;
+  background-color: #182d3d;
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+  outline: none;
 }
 main .container ul {
   display: flex;

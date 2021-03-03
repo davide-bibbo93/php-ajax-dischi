@@ -5,22 +5,50 @@ new Vue({
   el: '#root',
 
   data: {
-    // array dischi
-    disks:[],
+    discs: [],
+
+    select: '',
+
+    genres: [],
   },
 
-  mounted() {
-    const self = this;
-    // chiamata axios verso app/server.php
-    axios.get("http://localhost/php-ajax-dischi/app/server.php")
-    .then(function(resp) {
-      self.disks = resp.data;
-      console.log(self.disks);
+  mounted(){
+
+    const self=this;
+
+    axios.get('app/server.php')
+    .then(function(resp){
+      self.discs = resp.data;
+      console.log(self.discs);
+
+      self.discs.forEach((element)=>{
+        if(!self.genres.includes(element.genre)){
+          self.genres.push(element.genre)
+        }
+      })
     });
   },
 
-  methods:{
+  methods: {
 
-  },
+    genreSelect: function(){
+      const self = this;
+      console.log(self.select);
+      if (self.select === 'Tutti') {
+        axios.get('app/server.php')
+        .then((resp)=>{
+          self.discs = resp.data;
+          console.log(self.discs);
+        });
+
+      }else {
+        axios.get('app/server.php?genre=' + self.select)
+        .then((resp)=>{
+          self.discs = resp.data;
+          console.log(self.discs);
+        });
+      }
+    }
+  }
 });
-Vue.config.devtools = true
+Vue.config.devtools=true;

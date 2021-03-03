@@ -20,8 +20,20 @@
 
       <main>
         <div class="container">
+
+          <div class="select">
+            <h4>Ricerca per generi : </h4>
+            <select v-model="select" @change="genreSelect()">
+              <option disabled value=""></option>
+              <option>Tutti</option>
+              <option v-for="element in genres"
+              :value="element">{{element}}
+              </option>
+            </select>
+          </div>
+
           <ul>
-            <li v-for="element in disks">
+            <li v-for="element in discs">
               <img :src="element.poster" alt="">
               <h2>{{element.title}}</h2>
               <h4>{{element.author}}</h4>
@@ -29,6 +41,7 @@
               <h4>{{element.genre}}</h4>
             </li>
           </ul>
+
         </div>
       </main>
 
